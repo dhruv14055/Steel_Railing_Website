@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import uncleImage from '../assets/uncle.jpg' // ✅ Importing the image from src/assets
+import uncleImage from '../assets/uncle.jpg'
+import '../App.css' // 👈 Add this if your CSS is in App.css
 
 export default function Header() {
   const [showContact, setShowContact] = useState(false)
 
   return (
     <header className="bg-gray-800 text-white border px-4 py-5 flex justify-between items-center relative shadow-lg">
-      <h1 className="text-2xl font-bold">श्री श्याम स्टील & ग्लास एल्युमिनियम</h1>
+      <h1 className="shop-name">श्री श्याम स्टील & ग्लास एल्युमिनियम</h1>
 
       <button
         onClick={() => setShowContact(!showContact)}
@@ -15,10 +16,8 @@ export default function Header() {
         संपर्क करें
       </button>
 
-      {/* Contact Card with Close Button */}
       {showContact && (
         <div className="absolute top-full right-4 mt-4 bg-white text-black rounded-xl shadow-2xl p-6 w-96 z-50 border border-gray-300">
-          {/* Close Icon */}
           <div className="flex justify-end">
             <button
               onClick={() => setShowContact(false)}
@@ -28,10 +27,9 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Contact Info */}
           <div className="flex items-center gap-6 mt-2">
             <img
-              src={uncleImage} // ✅ Use the imported image variable here
+              src={uncleImage}
               alt="Uncle"
               className="w-25 h-25 rounded-full object-top border-2 border-gray-500"
             />
@@ -39,10 +37,10 @@ export default function Header() {
               <h2 className="text-xl font-semibold">धीरज बैरागी</h2>
               <p className="text-sm text-gray-600">Owner</p>
               <a
-                href="tel:+917440561006"
+                href="tel:+918871017326"
                 className="text-blue-600 hover:underline text-lg font-medium block mt-2"
               >
-                +91 7440561006
+                +91 8871017326
               </a>
             </div>
           </div>

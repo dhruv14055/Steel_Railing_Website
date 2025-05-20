@@ -6,14 +6,14 @@ import ProductList from './components/ProductList'
 import Footer from './components/Footer'
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState('Steel Railings')
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
 
   return (
     <div className="font-sans">
       <Header />
       <BannerSlider />
       <CategoryList onSelect={setSelectedCategory} />
-      <ProductList category={selectedCategory} />
+      {selectedCategory && <ProductList category={selectedCategory} />}
       <Footer />
     </div>
   )
